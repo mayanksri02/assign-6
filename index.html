@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+<body>
+    <div class="main" align="center">
+        <img src="ques.jfif">
+        <div class="box">
+            <h1>Guess the Number Game</h1>
+    <button onclick="game()" id="start">Lets Start</button>
+    </div>
+    </div>
+    <script>
+        function game(){
+             let num=prompt("Enter a number");
+            if(num>100 || num<0){
+                alert("invalid input!!! Please enter a number between 1 and 100");
+                
+            }
+            else{
+                alert("Your Number is "+num);
+                guess=0;
+                wins="";
+                for(i=1;i<5;i++){
+                    guess=Math.floor(Math.random()*100);
+                    alert("Computer guessed "+guess);
+                    if(guess==num){
+                        wins="win";
+                    }
+                }
+                if(wins=="win"){
+                    document.write("YOU LOSE !!!");
+                }
+                else{
+                    document.write("YOU WON !!!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
